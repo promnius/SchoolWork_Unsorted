@@ -1,0 +1,208 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/CA/hw2
+vbehavioralDecoder
+Z1 !s110 1411434497
+!i10b 1
+!s100 7al[>3QRZ5ilakDiSSQ6W2
+I1X`>K^CSUF_48m^Co0bY]0
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1411162368
+Z4 8decoder.v
+Z5 Fdecoder.v
+L0 6
+Z6 OP;L;10.3c;59
+r1
+!s85 0
+31
+Z7 !s108 1411434497.595000
+Z8 !s107 adder.v|decoder.v|multiplexer.v|
+Z9 !s90 -reportprogress|300|-work|work|multiplexer.v|decoder.v|adder.v|
+!s101 -O0
+!i113 1
+Z10 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+nbehavioral@decoder
+vbehavioralFullAdder
+R1
+!i10b 1
+!s100 3Za6Kf;4m2B=adoO`VUWC2
+I8`W`_4oj=jd5OfSXilfdX2
+R2
+R0
+Z11 w1411172203
+Z12 8adder.v
+Z13 Fadder.v
+L0 7
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+nbehavioral@full@adder
+vbehavioralMultiplexer
+R1
+!i10b 1
+!s100 Dc^TGOBXdk5BldSF]:QBN0
+IYGROgg[XEO9Imi@Uo^38i1
+R2
+R0
+Z14 w1411171697
+Z15 8multiplexer.v
+Z16 Fmultiplexer.v
+L0 6
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+nbehavioral@multiplexer
+vstructuralDecoder
+R1
+!i10b 1
+!s100 NB^UZ68JB[_960oR?o;`T1
+IV^^d=@LSkO9hA[V;:dmnm2
+R2
+R0
+R3
+R4
+R5
+Z17 L0 13
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+nstructural@decoder
+vstructuralFullAdder
+R1
+!i10b 1
+!s100 j8E1Jk=dUP`d2Glh>;Z=^0
+IL4nbFa>R=Y1=^_dI==ac23
+R2
+R0
+R11
+R12
+R13
+R17
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+nstructural@full@adder
+vstructuralMultiplexer
+R1
+!i10b 1
+!s100 Rj_`fdi;TK3AUm==?;3ND0
+I?ABDJo2oDVJS3gLX^d7=W3
+R2
+R0
+R14
+R15
+R16
+L0 15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+nstructural@multiplexer
+vtestDecoder
+R1
+!i10b 1
+!s100 =4PF<nTcZ3hYS5[PP5:9@1
+IeC5bP8U^:BEmSA[M==_OL0
+R2
+R0
+R3
+R4
+R5
+L0 32
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+ntest@decoder
+vtestFullAdder
+R1
+!i10b 1
+!s100 UReIKb9TF5Z54]8@M6L:U3
+I==gol^C=4l9=]@WzX=eWO0
+R2
+R0
+R11
+R12
+R13
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+ntest@full@adder
+vtestMultiplexer
+R1
+!i10b 1
+!s100 Id^MeKiBcK5MX?IR1EoWP0
+IhRIO:2VRDlFAL707mN`Y;0
+R2
+R0
+R14
+R15
+R16
+L0 37
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+!i113 1
+R10
+ntest@multiplexer

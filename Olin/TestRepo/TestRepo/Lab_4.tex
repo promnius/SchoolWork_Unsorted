@@ -1,0 +1,186 @@
+%% NOTES to self: I triple E (IEEE??) is an awesome formatting option (documentclass??), and should be tried for turning in OIE papers
+% (I'm assuming this is some kind of hillarious joke.)
+
+
+% This is a simple template for a ModCon LaTeX lab using the "article" class. Read both the text and the comments--everything is useful!
+
+%%%%NOTE: If you are asked to install a package, say yes!
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Added by Kyle:
+% this "article" class that is selected above is what controls all the layout stuff. It is customizable, and other presets are available.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% There's a lot of boilerplate crap that you don't need to understand
+\usepackage[utf8]{inputenc}
+
+% These are packages you may need... It doesn't cost anything to include them all, so you might as well.
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage{varioref}
+%\usepackage{fancyref}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{comment}
+%NOTE: hyperref makes red boxes around links that Erin thinks are ugly. If you never use a link (the \href command) and you don't want the red boxes, you can take this out.
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+
+% NOTE TO TEACHING TEAM: These packages can't auto-install with whatever the default setup is under windows. Placeins prevents floats from floating past section barriers, perpage resets numbering of footnotes by page (and also enables the \MakeSorted{figure} command which helps when using [H] and [h] figures together), appendix lets you make an appendix with letters instead of numbers (admittedly, not very useful for a lab...) 
+%\usepackage[section]{placeins}
+%\usepackage{perpage}
+%\usepackage{appendix}
+%\MakeSorted{figure}
+
+% Makes sure your document compiles when you screw up the references
+\vrefwarning
+
+%add some metadata to the PDF produced
+ % \pdfinfo{/Author (Forrest Bourke)
+    %       /Title (I am the Best)
+       %    /Keywords (truth)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% The "real" document content comes below...
+
+\title{Mod Con Lab 4 Report}
+\author{Kyle Mayer}
+%\date{Now} % Leave this commented to display the current date. Otherwise, you can redefine it here.
+
+\begin{document}
+\maketitle
+
+
+\section{Pre-Lab}
+This section contains circuit planning, necessary math, and predictions about the physical world. 
+
+
+% make sure that this circuit diagram has everything nicely labeled
+\subsection{Circuit Diagram}
+\begin{figure} [!ht]
+	\centering
+	\includegraphics[width=1\textwidth]{../SPICE_Simulation/Images/Schematic.pdf}
+	\caption {Note the separate sections: Hysteretic Oscillator (question 1), High and Low pass filters (question 2), and the inverting amplifier (math in future section)} % always include a caption
+	\label{fig:circuit_Diagram} % not printed in PDF, but is used for searching for the photo.
+	
+\end{figure}
+
+\subsection{Oscillator Math}
+% math for frequency
+the output frequency of the oscillator is 91 Hz. This is not visible, but it is audible (low pitch).
+
+\begin{align} % one optional math environment- a pretty good option.
+f &= \frac{1}{2ln(3)RC}\\ 
+f &= \frac{1}{2ln(3)X5000X10^{-6}}\\ 
+f &= 91 Hz
+\end{align}
+
+\subsection{Filter Cut-Off Frequency}
+% check the accuracy of this statement
+For filters, the initial cut-off frequency (the frequency at which signal strength begins to drop) is calculated as the inverse of the RC constant. After this point, signal strength drops at a rate of 20 db per decade.
+% math here for where the cuttoff Frequency is.
+% this answers Question 2
+We need buffers because otherwise the filters begin to interact. The RC line of one filter can cause loading on another, and suddenly our nice first-order filters become extremely challenging to analyze mathematically, and are not likely to behave as predicted.
+
+\subsection{Inverting Amplifier Analysis}
+Finding the input output relationship.
+For Case 1:
+\begin{align} % one optional math environment- a pretty good option.
+v- &= v+ \text{by definition of Case 1}\\
+v+ &= 0 = v- \text{obvious by inspection}\\
+i_{R} &= \frac{Vin - V-}{R} = \frac{Vin}{R}\\
+i_{Rf} &= \frac{0 - Vout}{Rf} = \frac{-Vout}{Rf}\\
+i_{Rf} &= i_{R}\\
+\frac{-Vout}{Rf} &= \frac{Vin}{R}\\
+\\
+Vout &= -\frac{Rf}{R}Vin\\
+\end{align}
+
+For Case 2 and 3: Analysis of these cases is not necessary- the gain will be set such that the Op Amp is not saturated.
+
+
+\section{Circuit Construction}
+This section documents the construction and testing of the basic filter circuit.
+
+\subsection{Breadboard Pictures}
+% tile all of the breadboard pictures
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=.75\textwidth]{../Other_Images/(1)_Begining_Circuit.jpg}
+	\caption {Initial Oscillator with Buffer} % always include a caption
+	\label{fig:First_Breadboard_Picture} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=.75\textwidth]{../Other_Images/(2)_Filters_Added.jpg}
+	\caption {Filters have been added} % always include a caption
+	\label{fig:Filters_Added_Breadboard_Picture} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=.75\textwidth]{../Other_Images/(3)_Filters_Completed.jpg}
+	\caption {All four Filters are now included} % always include a caption
+	\label{fig:Filters_Completed_Breadboard_Picture} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=.75\textwidth]{../Other_Images/(4)_Amplifier_Added.jpg}
+	\caption {Circuit Completed. Amplifier and final buffer installed.} % always include a caption
+	\label{fig:Amplifier_added} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\subsection{Filter Graphs}
+
+% vertically show all different filter graphs (native frequency, plus other frequencies, plus graphs for each that have only input output waves)
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1\textwidth]{../Scope_Captures/Tuned_Filters_Mid_Frequency.jpg}
+	\caption {For this graph, the filters have been tuned for this specific frequency. it shows the progression of filters, beginning with a square wave and ending with close to a sine wave.} % always include a caption
+	\label{fig:Mid_Frequency_Waveforms} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1\textwidth]{../Scope_Captures/High_Frequency.jpg}
+	\caption {Now, the frequency has been increased without re-tuning the filters. This is apparent, since the low-pass filters remove most of the wave.} % always include a caption
+	\label{fig:High_Frequency_Waveforms} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1\textwidth]{../Scope_Captures/Low_Frequency.jpg}
+	\caption {Now, the frequency has been reduced without re-tuning the filters. Notice that the low-pass filters have very little effect, but the high pass-filters cause significant disturbance to the original square wave.} % always include a caption
+	\label{fig:Low_Frequency_Waveforms} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+
+
+\subsection{Quantitative Filter Analysis}
+The high pass filters remove low frequencies, and the low pass filters remove high frequencies. As a result, when both high pass and low pass filters just begin to have an effect, the edges of a square wave become rounded to approximate a sign wave. When the frequency is changed (causing one of the two filters to become much more influential), the wave is almost completely removed (since the frequency falls in the filtered region).
+
+
+\section{Extra Fun}
+I went on to add a second oscillator, similar to lab 3. Below are graphs of how this has influenced the waveforms being filtered.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1\textwidth]{../Scope_Captures/Modulated_Oscillator.jpg}
+	\caption {Note how the square wave is modulated by the first oscillator, and how this influences the filters.} % always include a caption
+	\label{fig:Second_Oscillator} % not printed in PDF, but is used for searching for the photo.
+\end{figure}
+
+
+\end{document}

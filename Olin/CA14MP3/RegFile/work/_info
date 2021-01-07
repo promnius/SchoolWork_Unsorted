@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/CA/Verilog_Simulation/hw4
+vdecoder1to32
+Z1 !s110 1413509576
+!i10b 1
+!s100 Sb;]AN3miXkVkXnVGb^7B3
+IFMASf^b^?eVJ[D:_Y=V803
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1413345114
+8decoder1to32.v
+Fdecoder1to32.v
+L0 2
+Z3 OP;L;10.3c;59
+r1
+!s85 0
+31
+Z4 !s108 1413509576.726000
+Z5 !s107 register.v|register32zero.v|mux32to1by32.v|decoder1to32.v|hw4testbenchharness.v|regfile.v|
+Z6 !s90 -reportprogress|300|-work|work|regfile.v|hw4testbenchharness.v|decoder1to32.v|mux32to1by32.v|register32zero.v|register.v|
+!s101 -O0
+!i113 1
+Z7 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vhw4testbench
+R1
+!i10b 1
+!s100 Li3O=md_]=<9>HeCDnfIH2
+I?AF]L@9;;A]73J@`=Bc^>2
+R2
+R0
+Z8 w1413509571
+Z9 8hw4testbenchharness.v
+Z10 Fhw4testbenchharness.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+vhw4testbenchharness
+R1
+!i10b 1
+!s100 5YP^df@ZU6]a8XGez8:bn3
+IU;zd]=L2z=RbellcIMVok2
+R2
+R0
+R8
+R9
+R10
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+vmux32to1by32
+R1
+!i10b 1
+!s100 L>CYSQBYzTLUMW^;S93N@1
+ITI=j_Vz9=m87zG`?GE7<[1
+R2
+R0
+w1413343846
+8mux32to1by32.v
+Fmux32to1by32.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+vregfile
+R1
+!i10b 1
+!s100 f?M4Z8c^5876Ic^6LgQJ83
+Ic:FR[5GICcJO9lR7`z3;<3
+R2
+R0
+w1413348007
+8regfile.v
+Fregfile.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+vregister
+R1
+!i10b 1
+!s100 o5RJD7QICDcQccYY?9l`P1
+INQnV803cde6OnKN<MW8m<1
+R2
+R0
+w1413342990
+8register.v
+Fregister.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+vregister32zero
+R1
+!i10b 1
+!s100 7fVYRkmcM5^oaOmWD[0R21
+IS8dTZmSKWiLQf;:M9P50U1
+R2
+R0
+w1413347808
+8register32zero.v
+Fregister32zero.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
